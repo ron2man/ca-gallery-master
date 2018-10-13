@@ -29,14 +29,21 @@ function renderProjects() {
                     <i class="fa fa-plus fa-3x"></i>
                   </div>
                 </div>
-                <img class="img-fluid" src="img/portfolio/0${idx+1}-thumbnail.jpg" alt="">
+                <img class="img-fluid" src="img/portfolio/${project.name}.jpg" alt="${project.name}">
               </a>
               <div class="portfolio-caption">
-                <h4>${project.name}</h4>
-                <p class="text-muted">${project.title}</p>
+                <h4>${project.title}</h4>
               </div>
             </div>
         `
     });
     container.innerHTML = strHtml;
+}
+
+function onClickMsg() {
+  var $subject = $('#exampleFormControlInput1').val();
+  var $msg = $('#exampleFormControlTextarea1').val();
+  console.log('msg=',$msg,'subject',$subject)
+  openGmail($subject, $msg);
+
 }
